@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sherouk Shaaban Teal Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Sherouk Shaaban Mahmoud – Quality Control Engineer: manual, API and automation testing (Selenium, Java, Cucumber BDD). ISTQB CTFL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one centred 1120px column; full-width bands for hero and case study; experience as a dated rail; projects as a filterable grid */
+:root {
+  --bg: #F3F8F8;
+  --surface: #FFFFFF;
+  --surface-2: #E6F1F1;
+  --ink: #0F2A2E;
+  --muted: #4D676B;
+  --line: #CFE1E2;
+  --accent: #0B7A78;
+  --accent-soft: #DCF0EF;
+  --marker: #C04A26;
+  --marker-soft: #FCE6DD;
+  --pass: #1F7A4D;
+  --pass-soft: #E1F3E9;
+  --code-bg: #0F2A2E;
+  --code-fg: #DDEDEC;
+  --code-key: #7FDCD6;
+  --code-str: #F6A07F;
+  --code-dim: #7E9A9C;
+  --font-display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', Consolas, 'Courier New', monospace;
+  --radius: 10px;
+  --edge: #234246;
+  --edge-2: #2F5357;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0A1A1C; --surface: #10262A; --surface-2: #163135; --ink: #E1EEEE; --muted: #93AEB0; --line: #23413F;
+    --accent: #4FC9C4; --accent-soft: #123A3A; --marker: #F08A66; --marker-soft: #3A1E14; --pass: #6FD3A0; --pass-soft: #163327;
+    --code-bg: #061214; --code-fg: #DDEDEC; --code-key: #7FDCD6; --code-str: #F6A07F; --code-dim: #6E8C8E;
+    --edge: #1E3A3D; --edge-2: #2A4C50;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0A1A1C; --surface: #10262A; --surface-2: #163135; --ink: #E1EEEE; --muted: #93AEB0; --line: #23413F;
+  --accent: #4FC9C4; --accent-soft: #123A3A; --marker: #F08A66; --marker-soft: #3A1E14; --pass: #6FD3A0; --pass-soft: #163327;
+  --code-bg: #061214; --code-fg: #DDEDEC; --code-key: #7FDCD6; --code-str: #F6A07F; --code-dim: #6E8C8E;
+  --edge: #1E3A3D; --edge-2: #2A4C50;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; animation: none !important; } }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6; margin: 0; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--marker); }
+section { padding-block: 72px; }
+.sec-head { display: grid; gap: 10px; margin-bottom: 36px; max-width: 680px; }
+.sec-head h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; }
+.sec-head p { color: var(--muted); }
+
+/* nav */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; }
+.logo { font-family: var(--font-display); font-weight: 800; font-size: 19px; color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.logo span { display: inline-grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; background: var(--marker); color: #fff; font-size: 15px; }
+.links { display: flex; gap: 22px; font-size: 14.5px; }
+.links a { color: var(--muted); text-decoration: none; }
+.links a:hover { color: var(--ink); }
+@media (max-width: 760px) { .links { display: none; } }
+
+/* hero */
+.hero { padding-block: 64px 56px; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+.hero-grid > * { min-width: 0; }
+.status { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--pass); background: var(--pass-soft); padding: 5px 12px; border-radius: 999px; font-weight: 500; }
+.status::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--pass); }
+.hero h1 { font-size: clamp(40px, 6.4vw, 70px); font-weight: 800; letter-spacing: -.02em; margin: 18px 0 10px; }
+.hero .role { font-size: clamp(18px, 2.2vw, 22px); font-weight: 500; }
+.hero .lede { color: var(--muted); max-width: 54ch; margin-top: 16px; font-size: 17px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; border-radius: 8px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1px solid var(--ink); }
+.btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn.ghost { color: var(--ink); background: transparent; }
+.btn:hover { transform: translateY(-1px); }
+.gherkin { background: var(--code-bg); color: var(--code-fg); font-family: var(--font-mono); font-size: 14px; line-height: 1.75; border-radius: 12px; padding: 22px 24px; overflow-x: auto; box-shadow: 0 18px 40px -24px rgba(20, 32, 46, .55); }
+.gherkin .bar { display: flex; justify-content: space-between; color: var(--code-dim); font-size: 12px; margin-bottom: 12px; }
+.gherkin .k { color: var(--code-key); font-weight: 500; }
+.gherkin .t { color: var(--code-dim); }
+.gherkin .s { color: var(--code-str); }
+.gherkin .ok { color: #6FD3A0; }
+.gherkin pre { margin: 0; font: inherit; white-space: pre-wrap; }
+.stats { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: 56px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.stat { padding: 20px 16px; border-right: 1px solid var(--line); }
+.stat:last-child { border-right: 0; }
+.stat b { color: var(--accent); display: block; font-family: var(--font-display); font-size: 34px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.stat span { color: var(--muted); font-size: 14px; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .stats { grid-template-columns: repeat(2, 1fr); } .stat:nth-child(2n) { border-right: 0; } .stat { border-bottom: 1px solid var(--line); } }
+
+/* experience */
+.rail { display: grid; gap: 0; }
+.job { display: grid; grid-template-columns: 210px 1fr; gap: 32px; padding-block: 28px; border-top: 1px solid var(--line); }
+.job > * { min-width: 0; }
+.job .when { font-family: var(--font-mono); font-size: 13.5px; color: var(--muted); }
+.job .when b { display: block; color: var(--ink); font-family: var(--font-display); font-size: 21px; margin-bottom: 4px; }
+.job h3 { font-size: 20px; font-weight: 700; }
+.job .intro { color: var(--muted); margin: 6px 0 12px; }
+.job ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.job li::marker { color: var(--marker); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.chip { font-family: var(--font-mono); font-size: 12px; padding: 3px 9px; border-radius: 5px; background: var(--surface-2); color: var(--muted); border: 1px solid var(--line); }
+@media (max-width: 760px) { .job { grid-template-columns: 1fr; gap: 10px; } }
+
+/* case study */
+.case { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.case-grid > * { min-width: 0; }
+.case h3 { font-size: 19px; margin-bottom: 10px; }
+.case .block { display: grid; gap: 10px; }
+.case ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.numbers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-block: 32px; }
+.num { background: var(--surface-2); border-radius: var(--radius); padding: 16px; }
+.num b { color: var(--accent); display: block; font-family: var(--font-display); font-size: 30px; font-variant-numeric: tabular-nums; }
+.num span { font-size: 13.5px; color: var(--muted); }
+.flow-box { overflow-x: auto; margin-top: 8px; }
+.flow { display: grid; grid-template-columns: repeat(5, minmax(150px, 1fr)); gap: 0; min-width: 760px; }
+.step { position: relative; padding: 16px 18px 16px 16px; background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); margin-right: 26px; }
+.step:not(:last-child)::after { content: ""; position: absolute; right: -24px; top: 50%; width: 20px; height: 2px; background: var(--accent); }
+.step:not(:last-child)::before { content: ""; position: absolute; right: -25px; top: calc(50% - 4px); border: 5px solid transparent; border-left: 7px solid var(--accent); transform: translateX(6px); }
+.step:last-child { margin-right: 0; }
+.step .n { font-family: var(--font-mono); font-size: 12px; color: var(--marker); }
+.step b { display: block; font-size: 15px; margin: 2px 0 4px; }
+.step p { font-size: 13.5px; color: var(--muted); line-height: 1.45; }
+.step code { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink); }
+.caption { font-size: 14px; color: var(--muted); margin-top: 14px; }
+@media (max-width: 900px) { .case-grid { grid-template-columns: 1fr; } .numbers { grid-template-columns: repeat(2, 1fr); } }
+
+/* projects */
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+.filters button { font: inherit; font-size: 14px; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
+.filters button .c { font-family: var(--font-mono); font-size: 12px; opacity: .7; margin-left: 4px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.card .top { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.card h3 { font-size: 18px; }
+.card .date { font-family: var(--font-mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
+.card .what { font-size: 14px; color: var(--muted); }
+.card ul { margin: 0; padding-left: 18px; font-size: 14.5px; display: grid; gap: 4px; }
+.card .meta { margin-top: auto; display: flex; flex-wrap: wrap; gap: 6px; padding-top: 6px; }
+.tag-co { font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 5px; background: var(--accent-soft); color: var(--accent); }
+.tag-tr { background: var(--marker-soft); color: var(--marker); }
+@media (max-width: 420px) { .grid { grid-template-columns: 1fr; } }
+
+/* skills */
+.skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 36px; }
+.skills > div { min-width: 0; }
+.skills h3 { font-size: 16px; font-family: var(--font-body); font-weight: 600; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+@media (max-width: 900px) { .skills { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .skills { grid-template-columns: 1fr; } }
+
+/* process */
+.process { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; counter-reset: p; }
+.process li { list-style: none; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; counter-increment: p; min-width: 0; }
+.process li::before { content: "0" counter(p); font-family: var(--font-mono); font-size: 12px; color: var(--accent); }
+.process b { display: block; margin: 4px 0; font-size: 15px; }
+.process p { font-size: 13.5px; color: var(--muted); line-height: 1.45; }
+.process { padding: 0; margin: 0; }
+@media (max-width: 1000px) { .process { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 560px) { .process { grid-template-columns: 1fr; } }
+
+/* credentials */
+.creds { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; }
+.creds > * { min-width: 0; }
+.cert { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding-block: 16px; border-top: 1px solid var(--line); }
+.cert b { font-size: 16px; }
+.cert .d { font-family: var(--font-mono); font-size: 13px; color: var(--muted); white-space: nowrap; }
+.cert .id { grid-column: 1 / -1; font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.course { font-size: 15px; padding-block: 8px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; }
+.course span:last-child { font-family: var(--font-mono); font-size: 13px; color: var(--muted); white-space: nowrap; }
+@media (max-width: 860px) { .creds { grid-template-columns: 1fr; } }
+
+/* contact */
+.contact { background: var(--code-bg); color: var(--code-fg); }
+.contact .sec-head h2 { color: #fff; }
+.contact .sec-head p { color: var(--code-dim); }
+.contact .eyebrow { color: var(--code-key); }
+.contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.cbox { border: 1px solid var(--edge); border-radius: var(--radius); padding: 18px; display: grid; gap: 6px; min-width: 0; }
+.cbox .l { font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--code-dim); }
+.cbox .v { font-size: 16px; color: #fff; word-break: break-word; user-select: all; }
+.cbox a.v { text-decoration: none; }
+.cbox a.v:hover { text-decoration: underline; }
+.copy { justify-self: start; font: inherit; font-size: 13px; padding: 5px 12px; border-radius: 6px; border: 1px solid var(--edge-2); background: transparent; color: var(--code-fg); cursor: pointer; }
+footer { padding-block: 26px; font-size: 13.5px; color: var(--code-dim); background: var(--code-bg); border-top: 1px solid var(--edge); }
+@media (max-width: 760px) { .contact-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="#top"><span>SS</span>Sherouk Shaaban</a>
+    <div class="links">
+      <a href="#experience">Experience</a><a href="#case-study">Case study</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#credentials">Credentials</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="status">Open to QA Engineer opportunities</span>
+        <h1>Sherouk Shaaban Mahmoud</h1>
+        <p class="role">Quality Control Engineer · Manual, API &amp; Automation Testing</p>
+        <p class="lede">I make sure software works the way businesses and their customers expect. Over 3+ years I've tested 12+ products across ERP (Odoo), multi-role web portals, dashboards and mobile apps, from the first requirements review to the final regression run.</p>
+        <div class="cta">
+          <a class="btn primary" href="#case-study">See the case study</a>
+          <a class="btn ghost" href="https://linkedin.com/in/sherouk-shaaban28" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/sherouk2022" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <div class="gherkin" aria-label="Profile written as a Gherkin feature">
+        <div class="bar"><span>hire_a_tester.feature</span><span>Cucumber 7</span></div>
+<pre><span class="t">@smoke @hiring</span>
+<span class="k">Feature:</span> Ship software customers can trust
+
+  <span class="k">Scenario:</span> Add Sherouk to the QA team
+    <span class="k">Given</span> requirements in a <span class="s">"BRD, PRD or SRS"</span>
+    <span class="k">When</span> she designs the test plan and cases
+    <span class="k">And</span> automates them with <span class="s">"Selenium + Java"</span>
+    <span class="k">Then</span> defects are found before release
+    <span class="k">And</span> every case traces back to a requirement
+
+<span class="ok">1,200+ scenarios automated · 4,817 cases designed</span></pre>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>3+</b><span>years in QA</span></div>
+      <div class="stat"><b>12+</b><span>products tested</span></div>
+      <div class="stat"><b>4,817</b><span>test cases in one plan</span></div>
+      <div class="stat"><b>1,200+</b><span>automated BDD scenarios</span></div>
+      <div class="stat"><b>CTFL</b><span>ISTQB® certified, v4.0</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Experience</span>
+      <h2>Three companies, twelve products, one standard</h2>
+      <p>I started in QA alongside project management, which taught me to test with delivery dates, stakeholders and real customers in mind.</p>
+    </div>
+    <div class="rail">
+      <article class="job">
+        <div class="when"><b>Mdarj</b>Feb 2026 – Present<br>Alexandria, Egypt</div>
+        <div>
+          <h3>Quality Control Engineer (Software Tester)</h3>
+          <p class="intro">I test 4 products on web, Odoo and mobile: the SJC Tansiq Hajj camps portal, Horizon Academy, the SJC Odoo &amp; mobile system and Dares.</p>
+          <ul>
+            <li>Designed a role-based test plan for SJC Tansiq: <b>4,817 test cases</b>, 888 functional and 34 end-to-end scenarios across 16 modules and 6 user roles.</li>
+            <li>Built a Selenium 4 / Java 17 / Cucumber 7 BDD framework (Page Object Model, JUnit 5, AssertJ, Maven) and automated <b>1,200+ scenarios</b>.</li>
+            <li>Wrote a Python tool that generates Cucumber feature files from the Excel test plan, keeping every case ID as a tag.</li>
+            <li>Automated the email-OTP login with session reuse, so a full regression run needs only <b>1 OTP</b>.</li>
+            <li>Validated APIs for 3 products with Postman and Swagger: requests, responses, status codes and data integrity.</li>
+            <li>Built automated regression suites with Selenium + TestNG for Horizon Academy; ran functional, smoke, sanity, exploratory and AI-assisted testing.</li>
+            <li>Document, prioritize and retest defects with developers, and investigate customer feedback with Development, Support and Product.</li>
+          </ul>
+          <div class="chips"><span class="chip">Selenium 4</span><span class="chip">Java 17</span><span class="chip">Cucumber 7</span><span class="chip">JUnit 5</span><span class="chip">TestNG</span><span class="chip">Postman</span><span class="chip">Swagger</span><span class="chip">Odoo</span><span class="chip">Python</span></div>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when"><b>Nahr Development</b>Oct 2024 – Feb 2026<br>16 months</div>
+        <div>
+          <h3>Quality Control Engineer &amp; Project Manager</h3>
+          <p class="intro">QA owner for 5 mobile apps and their admin dashboards: Rabbito, Carbrake, Mashi, Malachite HR and Move Now.</p>
+          <ul>
+            <li>Ran exploratory, UI, manual and regression testing on mobile and dashboard sides to find functional, usability and integration issues.</li>
+            <li>Designed test cases, scenarios and conditions for 3 products from validated business and customer requirements.</li>
+            <li>Documented defects by severity and priority with clear reproduction steps, and retested them with developers until resolved.</li>
+            <li>As Project Manager, aligned testing with development timelines and followed up customer feedback with Support during the 10-month Rabbito engagement.</li>
+          </ul>
+          <div class="chips"><span class="chip">Mobile testing</span><span class="chip">Regression</span><span class="chip">Exploratory</span><span class="chip">Jira</span><span class="chip">Project management</span></div>
+        </div>
+      </article>
+      <article class="job">
+        <div class="when"><b>Faainex for Programming</b>Feb 2023 – Jun 2024<br>16 months</div>
+        <div>
+          <h3>Software Tester &amp; Project Manager</h3>
+          <p class="intro">Manual testing of an ERP system, the Faainex Store e-commerce platform and a currency exchange mobile app.</p>
+          <ul>
+            <li>Analyzed requirements and wrote SRS documents, test plans, test cases and scenarios for the ERP system.</li>
+            <li>Tracked defects with clear reproduction steps, verified fixes and delivered test reports on coverage, results and product quality.</li>
+            <li>Met stakeholders on new ERP features, and followed up with developers and the Support Team on deliverables and customer issues.</li>
+          </ul>
+          <div class="chips"><span class="chip">ERP testing</span><span class="chip">SRS</span><span class="chip">Test plans</span><span class="chip">Test reports</span><span class="chip">Stakeholders</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="case" id="case-study">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Case study · Mdarj · Oct 2026 – Present</span>
+      <h2>SJC Tansiq: testing a Hajj camps portal with 6 roles and 16 modules</h2>
+      <p>A multi-role web portal for allocating, preparing and following up Hajj camps in Mina and Arafat: dashboards, a GIS decision center, readiness statistics, requests, hypotheses, subsistence, security, operation and issue reports, and settings.</p>
+    </div>
+    <div class="numbers">
+      <div class="num"><b>4,817</b><span>test cases, each classified by priority, data impact and accounts needed</span></div>
+      <div class="num"><b>888</b><span>functional scenarios</span></div>
+      <div class="num"><b>34</b><span>end-to-end scenarios across modules</span></div>
+      <div class="num"><b>1,200+</b><span>scenarios automated in Smoke, E2E and module suites</span></div>
+    </div>
+    <div class="case-grid">
+      <div class="block">
+        <h3>Manual testing</h3>
+        <ul>
+          <li>Studied the user guides and the live portal, then wrote a role-based plan starting with the Consultant Advisor role.</li>
+          <li>Covered functional, negative, boundary, security (access control, XSS), UI, compatibility and performance cases.</li>
+          <li>Tested email-OTP login, sessions and role permissions across all 6 roles.</li>
+          <li>Logged observations and open questions for the business analyst so gaps in the requirements were closed early.</li>
+        </ul>
+      </div>
+      <div class="block">
+        <h3>Automation testing</h3>
+        <ul>
+          <li>Framework: Selenium WebDriver 4, Java 17, Cucumber 7, JUnit 5, AssertJ and Maven, using the Page Object Model.</li>
+          <li>Reusable steps for navigation, tables, search and filters, paging, sorting, Excel/PDF exports, form validation, logged-out access, XSS checks, screen widths and load times.</li>
+          <li>OTP handled by reading Gmail automatically or holding for manual entry, then reusing the session for the whole run.</li>
+          <li>Runners per role and per menu, with HTML reports and a screenshot on every failure.</li>
+        </ul>
+      </div>
+    </div>
+    <h3 style="margin-top:40px;font-size:19px">How a test case travels from the plan to a report</h3>
+    <div class="flow-box">
+      <div class="flow">
+        <div class="step"><span class="n">step 1</span><b>Excel test plan</b><p>4,817 cases with IDs, priority and role</p></div>
+        <div class="step"><span class="n">step 2</span><b>Python generator</b><p>Writes <code>.feature</code> files and keeps each case ID as a tag</p></div>
+        <div class="step"><span class="n">step 3</span><b>Cucumber features</b><p>Gherkin scenarios tagged <code>@smoke</code>, <code>@e2e</code>, per module</p></div>
+        <div class="step"><span class="n">step 4</span><b>Selenium runners</b><p>Page Object steps, one OTP per full run</p></div>
+        <div class="step"><span class="n">step 5</span><b>HTML report</b><p>Pass/fail per case ID, screenshots on failure</p></div>
+      </div>
+    </div>
+    <p class="caption">Because the case ID survives every step, a failed scenario in the report points straight back to its row in the test plan.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Projects</span>
+      <h2>Fourteen products tested</h2>
+      <p>Food delivery, car services, transport, HR, ERP, e-commerce, education, Quran study circles and Hajj operations, on web, mobile and dashboards.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter projects by company">
+      <button type="button" id="f-all" data-f="all" aria-pressed="true">All<span class="c">14</span></button>
+      <button type="button" id="f-mdarj" data-f="mdarj" aria-pressed="false">Mdarj<span class="c">4</span></button>
+      <button type="button" id="f-nahr" data-f="nahr" aria-pressed="false">Nahr Development<span class="c">5</span></button>
+      <button type="button" id="f-faainex" data-f="faainex" aria-pressed="false">Faainex<span class="c">3</span></button>
+      <button type="button" id="f-training" data-f="training" aria-pressed="false">Training<span class="c">2</span></button>
+    </div>
+    <div class="grid" id="project-grid">
+      <article class="card" data-co="mdarj"><div class="top"><h3>SJC Tansiq</h3><span class="date">Oct 2026 – now</span></div><p class="what">Hajj camps management portal · Web</p><ul><li>4,817-case role-based test plan, 16 modules, 6 roles</li><li>1,200+ automated BDD scenarios</li><li>Security: access control and XSS checks</li></ul><div class="meta"><span class="tag-co">Mdarj</span><span class="chip">Selenium</span><span class="chip">Cucumber</span><span class="chip">Java</span></div></article>
+      <article class="card" data-co="mdarj"><div class="top"><h3>Horizon Academy</h3><span class="date">Jun 2026 – now</span></div><p class="what">Courses &amp; services platform · Web</p><ul><li>Reviewed PRDs; wrote test cases and scenarios</li><li>UI, API and AI-assisted testing</li><li>Automated regression suites with TestNG</li></ul><div class="meta"><span class="tag-co">Mdarj</span><span class="chip">TestNG</span><span class="chip">Selenium</span><span class="chip">API</span></div></article>
+      <article class="card" data-co="mdarj"><div class="top"><h3>SJC Company System</h3><span class="date">Feb 2026 – now</span></div><p class="what">Mobile app linked to an Odoo dashboard</p><ul><li>API testing for both app versions</li><li>Manual testing of the mobile versions</li><li>Exploratory and smoke testing on Odoo</li></ul><div class="meta"><span class="tag-co">Mdarj</span><span class="chip">Odoo</span><span class="chip">Postman</span><span class="chip">Mobile</span></div></article>
+      <article class="card" data-co="mdarj"><div class="top"><h3>Dares</h3><span class="date">Feb 2026 – now</span></div><p class="what">Quran study circles app &amp; control panel</p><ul><li>API and regression testing</li><li>Exploratory and smoke testing on the control panel</li><li>Bug reporting and retesting</li></ul><div class="meta"><span class="tag-co">Mdarj</span><span class="chip">API</span><span class="chip">Regression</span><span class="chip">Mobile</span></div></article>
+      <article class="card" data-co="nahr"><div class="top"><h3>Rabbito</h3><span class="date">Apr 2025 – Jan 2026</span></div><p class="what">Food delivery app &amp; dashboard</p><ul><li>UI manual and regression testing on mobile and dashboard</li><li>Followed up development as Project Manager</li><li>Customer feedback follow-up with Support</li></ul><div class="meta"><span class="tag-co">Nahr Development</span><span class="chip">Mobile</span><span class="chip">Regression</span></div></article>
+      <article class="card" data-co="nahr"><div class="top"><h3>Carbrake</h3><span class="date">Oct 2025 – Feb 2026</span></div><p class="what">Car services app &amp; dashboard</p><ul><li>Test cases and scenarios</li><li>UI manual and regression testing</li><li>Manual testing on the dashboard</li></ul><div class="meta"><span class="tag-co">Nahr Development</span><span class="chip">Mobile</span><span class="chip">Dashboard</span></div></article>
+      <article class="card" data-co="nahr"><div class="top"><h3>Mashi</h3><span class="date">Nov 2025 – Feb 2026</span></div><p class="what">Individual transportation app</p><ul><li>Test cases and scenarios</li><li>UI manual testing on mobile</li><li>Smoke testing on the dashboard</li></ul><div class="meta"><span class="tag-co">Nahr Development</span><span class="chip">Mobile</span><span class="chip">Smoke</span></div></article>
+      <article class="card" data-co="nahr"><div class="top"><h3>Malachite HR</h3><span class="date">Oct 2025 – Feb 2026</span></div><p class="what">HR management system</p><ul><li>Exploratory testing of the old version</li><li>Test cases and manual testing</li><li>Bug documentation</li></ul><div class="meta"><span class="tag-co">Nahr Development</span><span class="chip">Exploratory</span><span class="chip">Web</span></div></article>
+      <article class="card" data-co="nahr"><div class="top"><h3>Move Now</h3><span class="date">Mar 2025</span></div><p class="what">Mobile app &amp; dashboard</p><ul><li>Manual and UI testing on mobile and dashboard</li><li>Followed up development with the dev team</li></ul><div class="meta"><span class="tag-co">Nahr Development</span><span class="chip">Mobile</span><span class="chip">UI</span></div></article>
+      <article class="card" data-co="faainex"><div class="top"><h3>Faainex ERP</h3><span class="date">Feb 2023 – Jun 2024</span></div><p class="what">ERP system</p><ul><li>SRS documents, test cases and scenarios</li><li>Manual testing and defect reporting</li><li>Stakeholder and support meetings</li></ul><div class="meta"><span class="tag-co">Faainex</span><span class="chip">ERP</span><span class="chip">SRS</span></div></article>
+      <article class="card" data-co="faainex"><div class="top"><h3>Faainex Store</h3><span class="date">Feb 2023</span></div><p class="what">E-commerce platform</p><ul><li>Test scenarios and manual testing</li><li>Defect reporting and follow-up</li><li>Customer feedback with Support</li></ul><div class="meta"><span class="tag-co">Faainex</span><span class="chip">E-commerce</span><span class="chip">Web</span></div></article>
+      <article class="card" data-co="faainex"><div class="top"><h3>Currency Exchange App</h3><span class="date">Sep 2023</span></div><p class="what">Mobile app</p><ul><li>Test scenarios and manual testing</li><li>Defect reporting and debugging follow-up</li></ul><div class="meta"><span class="tag-co">Faainex</span><span class="chip">Mobile</span></div></article>
+      <article class="card" data-co="training"><div class="top"><h3>Demo Project</h3><span class="date">Aug 2024</span></div><p class="what">Manual &amp; automation practice</p><ul><li>Test cases, manual and automated runs</li><li>Selenium WebDriver + TestNG in IntelliJ IDEA</li><li>Automated user login scenario</li></ul><div class="meta"><span class="tag-co tag-tr">AMIT training</span><span class="chip">Selenium</span><span class="chip">TestNG</span></div></article>
+      <article class="card" data-co="training"><div class="top"><h3>Guru99 Banking</h3><span class="date">Jun 2024</span></div><p class="what">Banking demo app · Manual</p><ul><li>Test cases and bug reports</li><li>Detailed manual testing</li><li>Test and defect management in Jira</li></ul><div class="meta"><span class="tag-co tag-tr">AMIT training</span><span class="chip">Jira</span><span class="chip">Manual</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How I test</span>
+      <h2>From requirement to release</h2>
+    </div>
+    <ol class="process">
+      <li><b>Review requirements</b><p>BRD, PRD and SRS reviewed; gaps raised before code is written.</p></li>
+      <li><b>Plan</b><p>Scope, roles, environments, risks and entry/exit criteria.</p></li>
+      <li><b>Design</b><p>Scenarios and cases using equivalence partitioning and boundary values.</p></li>
+      <li><b>Execute</b><p>Functional, exploratory, API, UI and security runs per build.</p></li>
+      <li><b>Report defects</b><p>Clear steps, severity and priority; retest until verified.</p></li>
+      <li><b>Automate &amp; regress</b><p>Stable flows move into Smoke and regression suites.</p></li>
+    </ol>
+    <div class="sec-head" style="margin-top:72px">
+      <span class="eyebrow">Skills</span>
+      <h2>Tools and techniques</h2>
+    </div>
+    <div class="skills">
+      <div><h3>Testing</h3><div class="chips"><span class="chip">Manual</span><span class="chip">Functional</span><span class="chip">Regression</span><span class="chip">Smoke</span><span class="chip">Sanity</span><span class="chip">Exploratory</span><span class="chip">Black-box</span><span class="chip">UI</span><span class="chip">Negative</span><span class="chip">Boundary</span><span class="chip">Security (access control, XSS)</span><span class="chip">Compatibility</span><span class="chip">AI-assisted</span></div></div>
+      <div><h3>Automation</h3><div class="chips"><span class="chip">Selenium WebDriver</span><span class="chip">Java</span><span class="chip">Cucumber (BDD / Gherkin)</span><span class="chip">JUnit 5</span><span class="chip">TestNG</span><span class="chip">AssertJ</span><span class="chip">Page Object Model</span><span class="chip">Maven</span><span class="chip">IntelliJ IDEA</span><span class="chip">Python</span></div></div>
+      <div><h3>API &amp; data</h3><div class="chips"><span class="chip">Postman</span><span class="chip">Swagger / OpenAPI</span><span class="chip">Status codes</span><span class="chip">Data integrity</span><span class="chip">SQL Server</span><span class="chip">MySQL</span></div></div>
+      <div><h3>Test design &amp; documentation</h3><div class="chips"><span class="chip">Test plans</span><span class="chip">E2E scenarios</span><span class="chip">Test cases</span><span class="chip">Traceability</span><span class="chip">Test reports</span><span class="chip">BRD / PRD / SRS review</span><span class="chip">Severity &amp; priority</span></div></div>
+      <div><h3>Tools &amp; platforms</h3><div class="chips"><span class="chip">Jira</span><span class="chip">Azure DevOps</span><span class="chip">Git / GitHub</span><span class="chip">CRM</span><span class="chip">Claude (AI)</span><span class="chip">MS Office</span><span class="chip">Web</span><span class="chip">Android / iOS</span><span class="chip">Odoo</span></div></div>
+      <div><h3>Ways of working</h3><div class="chips"><span class="chip">SDLC</span><span class="chip">Attention to detail</span><span class="chip">Analytical thinking</span><span class="chip">Problem solving</span><span class="chip">Cross-functional communication</span><span class="chip">Project management</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="credentials" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Credentials</span>
+      <h2>Certifications and education</h2>
+    </div>
+    <div class="creds">
+      <div>
+        <div class="cert"><b>ISTQB® Certified Tester – Foundation Level (CTFL v4.0)</b><span class="d">Nov 2024</span><span class="id">Certificate code 241023038</span></div>
+        <div class="cert"><b>ISTQB® Foundation Level – ITI Platform</b><span class="d">Sep 2024</span><span class="id">Verification code LQsJBSHAwS</span></div>
+        <div class="cert"><b>Software Testing Diploma – AMIT Learning</b><span class="d">May – Sep 2024</span><span class="id">ISTQB Foundation, manual, database, API and mobile testing, Selenium automation</span></div>
+        <div class="cert"><b>B.A. Geography and GIS – Alexandria University</b><span class="d">2016 – 2020</span><span class="id">Survey and Mapping Division, Faculty of Arts</span></div>
+      </div>
+      <div>
+        <h3 style="font-family:var(--font-body);font-size:16px;font-weight:600;margin-bottom:8px">Courses</h3>
+        <div class="course"><span>General, Business &amp; Conversational English – European Institute</span><span>2021</span></div>
+        <div class="course"><span>Human Development – European Institute</span><span>2021</span></div>
+        <div class="course"><span>English, Post-Intermediate Level 1 – MODLI</span><span>2019</span></div>
+        <div class="course"><span>ICDL – ITTC, Alexandria University</span><span>2019</span></div>
+        <div class="course"><span>Soft Skills &amp; Employment Skills – Microsoft, UNDP Egypt, Ministry of Youth</span><span>2018</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Contact</span>
+      <h2>Let's talk about your next release</h2>
+      <p>Based in Alexandria, Egypt. Open to on-site, hybrid and remote QA roles.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="cbox"><span class="l">Email</span><span class="v" id="email">sherouk2022@gmail.com</span><button class="copy" type="button" id="copy-email">Copy email</button></div>
+      <div class="cbox"><span class="l">LinkedIn</span><a class="v" href="https://linkedin.com/in/sherouk-shaaban28" target="_blank" rel="noopener">linkedin.com/in/sherouk-shaaban28</a></div>
+      <div class="cbox"><span class="l">GitHub</span><a class="v" href="https://github.com/sherouk2022" target="_blank" rel="noopener">github.com/sherouk2022</a></div>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap">© 2026 Sherouk Shaaban Mahmoud · Quality Control Engineer · ISTQB® CTFL</div></footer>
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.filters button');
+  var cards = document.querySelectorAll('#project-grid .card');
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.getAttribute('data-f');
+      buttons.forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      cards.forEach(function (c) { c.hidden = !(f === 'all' || c.getAttribute('data-co') === f); });
+    });
+  });
+  var btn = document.getElementById('copy-email');
+  btn.addEventListener('click', function () {
+    var text = document.getElementById('email').textContent;
+    var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy email'; }, 1800); };
+    var fallback = function () {
+      var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = 'Selected – press Ctrl+C';
+    };
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
