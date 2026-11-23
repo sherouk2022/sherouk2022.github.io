@@ -370,10 +370,10 @@ footer a { color: var(--code-dim); }
 .hbar .lab { display: flex; align-items: center; gap: 8px; }
 .hbar .lab .ic { width: 17px; height: 17px; color: var(--muted); }
 .hbar .trk { position: relative; height: 22px; }
-.hbar .val { height: 100%; width: calc(var(--v) / 8 * 88%); min-width: 22px; background: var(--accent); border-radius: 0 5px 5px 0; position: relative; }
+.hbar .val { height: 100%; width: calc(var(--v) / 9 * 88%); min-width: 22px; background: var(--accent); border-radius: 0 5px 5px 0; position: relative; }
 .js .hbar .val { transform: scaleX(0); transform-origin: left; transition: transform 1s cubic-bezier(.3,.7,.3,1); }
 .js .in .hbar .val { transform: scaleX(1); }
-.hbar .num-l { position: absolute; top: 50%; transform: translateY(-50%); left: calc(var(--v) / 8 * 88% + 8px); font-family: var(--font-mono); font-size: 13px; color: var(--ink); }
+.hbar .num-l { position: absolute; top: 50%; transform: translateY(-50%); left: calc(var(--v) / 9 * 88% + 8px); font-family: var(--font-mono); font-size: 13px; color: var(--ink); }
 .chart-note { font-size: 12.5px; color: var(--muted); margin-top: 14px; }
 @media (max-width: 900px) { .insights { grid-template-columns: 1fr; } }
 @media (max-width: 420px) { .hbar { grid-template-columns: 104px 1fr; font-size: 13px; } #donut { margin-inline: auto; } }
@@ -558,7 +558,7 @@ footer a { color: var(--code-dim); }
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Experience</span>
-      <h2>Three companies, thirteen products, one standard</h2>
+      <h2>Three companies, fourteen products, one standard</h2>
       <p>I started in QA alongside project management, which taught me to test with delivery dates, stakeholders and real customers in mind.</p>
     </div>
     <div class="rail">
@@ -566,14 +566,15 @@ footer a { color: var(--code-dim); }
         <div class="when"><span class="mono" style="background:var(--s-mdarj)">M</span><b>Mdarj</b>Feb 2026 – Present<br>Alexandria, Egypt</div>
         <div>
           <h3>Quality Control Engineer (Software Tester)</h3>
-          <p class="intro">I test 5 products on web, Odoo and mobile: the SJC Tansiq Hajj camps portal, the Spark Fu marketplace, Horizon Academy, the SJC Odoo &amp; mobile system and Dares.</p>
+          <p class="intro">I test 6 products on web, Odoo and mobile: the SJC Tansiq Hajj camps portal, the Spark Fu marketplace, the Qurat Aini mosques &amp; donations platform, Horizon Academy, the SJC Odoo &amp; mobile system and Dares.</p>
           <ul>
             <li>Designed a role-based test plan for SJC Tansiq: <b>4,817 test cases</b>, 888 functional and 34 end-to-end scenarios across 16 modules and 6 user roles.</li>
             <li>Designed a role-based test plan for Spark Fu, a bilingual Odoo marketplace: <b>110 scenarios</b> and <b>178 Arabic/English test cases</b> across 18 modules, traced to spec references.</li>
+            <li>Wrote 12 bilingual end-to-end test plans for Qurat Aini, a mosques &amp; donations platform: <b>1,500+ test cases</b> for 6 roles, plus a Python API harness for a <b>665-endpoint</b> API, with <b>430 defects</b> tracked across 12 test cycles.</li>
             <li>Built a Selenium 4 / Java 17 / Cucumber 7 BDD framework (Page Object Model, JUnit 5, AssertJ, Maven) and automated <b>1,200+ scenarios</b>.</li>
             <li>Wrote a Python tool that generates Cucumber feature files from the Excel test plan, keeping every case ID as a tag.</li>
             <li>Automated the email-OTP login with session reuse, so a full regression run needs only <b>1 OTP</b>.</li>
-            <li>Validated APIs for 3 products with Postman and Swagger: requests, responses, status codes and data integrity.</li>
+            <li>Validated APIs for 4 products with Postman and Swagger: requests, responses, status codes and data integrity.</li>
             <li>Built automated regression suites with Selenium + TestNG for Horizon Academy; ran functional, smoke, sanity, exploratory and AI-assisted testing.</li>
             <li>Document, prioritize and retest defects with developers, and investigate customer feedback with Development, Support and Product.</li>
           </ul>
@@ -622,7 +623,7 @@ footer a { color: var(--code-dim); }
           <span><i style="background:var(--s-training)"></i>Training</span>
         </div>
       </div>
-      <div id="timeline" role="img" aria-label="Gantt chart of 15 projects from February 2023 to today, grouped by company. The same data is in the table below."></div>
+      <div id="timeline" role="img" aria-label="Gantt chart of 16 projects from February 2023 to today, grouped by company. The same data is in the table below."></div>
       <div class="tip" id="tip" role="presentation"></div>
       <details>
         <summary>View as table</summary>
@@ -632,19 +633,19 @@ footer a { color: var(--code-dim); }
 
     <div class="insights">
       <div class="chart-card reveal">
-        <div class="chart-head"><div><h3>Products by company</h3><p>15 products tested, including 2 training projects</p></div></div>
+        <div class="chart-head"><div><h3>Products by company</h3><p>16 products tested, including 2 training projects</p></div></div>
         <div class="donut-wrap">
-          <div id="donut" role="img" aria-label="Donut chart: Mdarj 5, Nahr Development 5, Faainex 3, Training 2. Total 15 products."><div class="center"><b>15</b><span>products</span></div></div>
+          <div id="donut" role="img" aria-label="Donut chart: Mdarj 6, Nahr Development 5, Faainex 3, Training 2. Total 16 products."><div class="center"><b>16</b><span>products</span></div></div>
           <div class="dlegend" id="dlegend"></div>
         </div>
       </div>
       <div class="chart-card reveal">
         <div class="chart-head"><div><h3>Where I test</h3><p>Number of projects that covered each platform</p></div></div>
-        <div class="hbars" role="img" aria-label="Bar chart: Mobile apps 7 projects, Web apps 8, Admin dashboards 6, APIs 3, ERP and Odoo 3.">
+        <div class="hbars" role="img" aria-label="Bar chart: Mobile apps 7 projects, Web apps 9, Admin dashboards 7, APIs 4, ERP and Odoo 3.">
           <div class="hbar"><span class="lab"><svg class="ic"><use href="#i-mobile"/></svg>Mobile apps</span><div class="trk"><div class="val" style="--v:7"></div><span class="num-l" style="--v:7">7</span></div></div>
-          <div class="hbar"><span class="lab"><svg class="ic"><use href="#i-browser"/></svg>Web apps</span><div class="trk"><div class="val" style="--v:8"></div><span class="num-l" style="--v:8">8</span></div></div>
-          <div class="hbar"><span class="lab"><svg class="ic"><use href="#i-grid"/></svg>Dashboards</span><div class="trk"><div class="val" style="--v:6"></div><span class="num-l" style="--v:6">6</span></div></div>
-          <div class="hbar"><span class="lab"><svg class="ic"><use href="#i-api"/></svg>APIs</span><div class="trk"><div class="val" style="--v:3"></div><span class="num-l" style="--v:3">3</span></div></div>
+          <div class="hbar"><span class="lab"><svg class="ic"><use href="#i-browser"/></svg>Web apps</span><div class="trk"><div class="val" style="--v:9"></div><span class="num-l" style="--v:9">9</span></div></div>
+          <div class="hbar"><span class="lab"><svg class="ic"><use href="#i-grid"/></svg>Dashboards</span><div class="trk"><div class="val" style="--v:7"></div><span class="num-l" style="--v:7">7</span></div></div>
+          <div class="hbar"><span class="lab"><svg class="ic"><use href="#i-api"/></svg>APIs</span><div class="trk"><div class="val" style="--v:4"></div><span class="num-l" style="--v:4">4</span></div></div>
           <div class="hbar"><span class="lab"><svg class="ic"><use href="#i-table"/></svg>ERP / Odoo</span><div class="trk"><div class="val" style="--v:3"></div><span class="num-l" style="--v:3">3</span></div></div>
         </div>
         <p class="chart-note">A project can count in more than one row. For example, Rabbito covered both a mobile app and a dashboard.</p>
@@ -731,12 +732,12 @@ footer a { color: var(--code-dim); }
   <div class="wrap">
     <div class="sec-head reveal">
       <span class="eyebrow">Projects</span>
-      <h2>Fifteen products tested</h2>
-      <p>Food delivery, car services, transport, HR, ERP, e-commerce, industrial marketplaces, education, Quran study circles and Hajj operations, on web, mobile and dashboards.</p>
+      <h2>Sixteen products tested</h2>
+      <p>Food delivery, car services, transport, HR, ERP, e-commerce, industrial marketplaces, mosques &amp; donations, education, Quran study circles and Hajj operations, on web, mobile and dashboards.</p>
     </div>
     <div class="filters" role="group" aria-label="Filter projects by company">
-      <button type="button" data-f="all" aria-pressed="true">All<span class="c">15</span></button>
-      <button type="button" data-f="mdarj" aria-pressed="false"><i style="background:var(--s-mdarj)"></i>Mdarj<span class="c">5</span></button>
+      <button type="button" data-f="all" aria-pressed="true">All<span class="c">16</span></button>
+      <button type="button" data-f="mdarj" aria-pressed="false"><i style="background:var(--s-mdarj)"></i>Mdarj<span class="c">6</span></button>
       <button type="button" data-f="nahr" aria-pressed="false"><i style="background:var(--s-nahr)"></i>Nahr Development<span class="c">5</span></button>
       <button type="button" data-f="faainex" aria-pressed="false"><i style="background:var(--s-faainex)"></i>Faainex<span class="c">3</span></button>
       <button type="button" data-f="training" aria-pressed="false"><i style="background:var(--s-training)"></i>Training<span class="c">2</span></button>
@@ -744,6 +745,7 @@ footer a { color: var(--code-dim); }
     <div class="grid" id="project-grid">
       <article class="card" data-co="mdarj"><div class="top"><h3>SJC Tansiq</h3><span class="date">Oct 2026 – now</span></div><p class="what"><svg class="ic"><use href="#i-browser"/></svg>Hajj camps management portal · Web</p><ul><li>4,817-case role-based test plan, 16 modules, 6 roles</li><li>1,200+ automated BDD scenarios</li><li>Security: access control and XSS checks</li></ul><div class="meta"><span class="tag-co">Mdarj</span><span class="chip">Selenium</span><span class="chip">Cucumber</span><span class="chip">Java</span></div></article>
       <article class="card" data-co="mdarj"><div class="top"><h3>Spark Fu</h3><span class="date">Nov 2026 – now</span></div><p class="what"><svg class="ic"><use href="#i-browser"/></svg>Bilingual B2B equipment marketplace · Odoo</p><ul><li>110 role-based scenarios across website, vendor portal and Odoo back office</li><li>178 Arabic/English test cases, 18 modules, P1–P3</li><li>OTP and Google login, buy/rent, cart, payment, RTL/LTR and SEO</li></ul><div class="meta"><span class="tag-co">Mdarj</span><span class="chip">Odoo</span><span class="chip">E-commerce</span><span class="chip">Localization</span></div></article>
+      <article class="card" data-co="mdarj"><div class="top"><h3>Qurat Aini</h3><span class="date">Jul 2026 – now</span></div><p class="what"><svg class="ic"><use href="#i-browser"/></svg>Mosques &amp; donations platform · Web &amp; API</p><ul><li>12 bilingual E2E test plans: 1,500+ cases, 6 roles</li><li>Python API harness for a 665-endpoint API</li><li>430 defects tracked across 12 test cycles</li></ul><div class="meta"><span class="tag-co">Mdarj</span><span class="chip">API</span><span class="chip">Python</span><span class="chip">Security</span></div></article>
       <article class="card" data-co="mdarj"><div class="top"><h3>Horizon Academy</h3><span class="date">Jun 2026 – now</span></div><p class="what"><svg class="ic"><use href="#i-browser"/></svg>Courses &amp; services platform · Web</p><ul><li>Reviewed PRDs; wrote test cases and scenarios</li><li>UI, API and AI-assisted testing</li><li>Automated regression suites with TestNG</li></ul><div class="meta"><span class="tag-co">Mdarj</span><span class="chip">TestNG</span><span class="chip">Selenium</span><span class="chip">API</span></div></article>
       <article class="card" data-co="mdarj"><div class="top"><h3>SJC Company System</h3><span class="date">Feb 2026 – now</span></div><p class="what"><svg class="ic"><use href="#i-mobile"/></svg>Mobile app linked to an Odoo dashboard</p><ul><li>API testing for both app versions</li><li>Manual testing of the mobile versions</li><li>Exploratory and smoke testing on Odoo</li></ul><div class="meta"><span class="tag-co">Mdarj</span><span class="chip">Odoo</span><span class="chip">Postman</span><span class="chip">Mobile</span></div></article>
       <article class="card" data-co="mdarj"><div class="top"><h3>Dares</h3><span class="date">Feb 2026 – now</span></div><p class="what"><svg class="ic"><use href="#i-mobile"/></svg>Quran study circles app &amp; control panel</p><ul><li>API and regression testing</li><li>Exploratory and smoke testing on the control panel</li><li>Bug reporting and retesting</li></ul><div class="meta"><span class="tag-co">Mdarj</span><span class="chip">API</span><span class="chip">Regression</span><span class="chip">Mobile</span></div></article>
@@ -974,6 +976,7 @@ footer a { color: var(--code-dim); }
     ['SJC Company System', 'mdarj', '2026-02', null, 'Mobile app + Odoo dashboard'],
     ['Dares', 'mdarj', '2026-02', null, 'Quran study circles app'],
     ['Horizon Academy', 'mdarj', '2026-06', null, 'Courses & services platform'],
+    ['Qurat Aini', 'mdarj', '2026-07', null, 'Mosques & donations platform'],
     ['SJC Tansiq', 'mdarj', '2026-10', null, 'Hajj camps management portal'],
     ['Spark Fu', 'mdarj', '2026-11', null, 'Bilingual B2B equipment marketplace']
   ];
